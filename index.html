@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rill'z Store</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body data-theme="dark">
+
+<nav>
+  <div class="logo">E-Shop</div>
+  <ul>
+    <li><a href="#home">Beranda</a></li>
+    <li><a href="#produk">Produk</a></li>
+    <li><a href="#kontak">Kontak</a></li>
+    <li class="toggle" onclick="toggleTheme()">🌙</li>
+    <li class="cart" onclick="toggleCart()">🛒<span class="badge" id="badge">0</span></li>
+  </ul>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <img src="produk1.jpg">
+    <h1>Rill'z Store</h1>
+    <button onclick="scrollProduk()">Mulai</button>
+  </div>
+</section>
+
+<section id="produk">
+<h2>Daftar Produk</h2>
+
+<div class="filter-bar">
+  <input type="text" id="searchInput" placeholder="Cari produk...">
+  <select id="sortPrice">
+    <option value="">Urutkan Harga</option>
+    <option value="low">Termurah</option>
+    <option value="high">Termahal</option>
+  </select>
+</div>
+
+<div class="products" id="productList">
+
+<div class="card" data-name="Kolase SB" data-price="10000">
+  <img src="produk1.jpg">
+  <h3>Kolase Seni Budaya</h3>
+  <p class="id">ID: Prod1</p>
+  <p class="desc">karya seni kolase seni budaya yang dibuat oleh kami</p>
+  <p class="price">Rp 10.000</p>
+  <button onclick="addCart('Produk 1','Prod1',10000,'produk1.jpg')">
+    Tambahkan ke Keranjang
+  </button>
+</div>
+
+<div class="card" data-name="Gloo - Patrick Star" data-price="200000">
+  <img src="produk2.jpg">
+  <h3>Gloo - Patrick Star</h3>
+  <p class="id">ID: Prod2</p>
+  <p class="desc">Skin collab gloo yang menjadi Patrick Star dari serial kartun Spongebob Squarepants
+  (ini via gift)</p>
+  <p class="price">Rp 200.000</p>
+  <button onclick="addCart('Produk 2','Prod2',200000,'produk2.jpg')">
+    Tambahkan ke Keranjang
+  </button>
+</div>
+
+<div class="card" data-name="Starlight Card" data-price="32000">
+  <img src="produk3.png">
+  <h3>Starlight Card</h3>
+  <p class="id">ID: Prod3</p>
+  <p class="desc">Starlight Card via gift(Delay 7 hari)</p>
+  <p class="price">Rp 32.000</p>
+  <button onclick="addCart('Produk 3','Prod3',32000,'produk3.png')">
+    Tambahkan ke Keranjang
+  </button>
+</div>
+
+<div class="card" data-name="Premium Starlight Card" data-price="60000">
+  <img src="produk4.png">
+  <h3>Premium Starlight Card</h3>
+  <p class="id">ID: Prod4</p>
+  <p class="desc">Premium Starlight Card via gift (Delay 7 hari)</p>
+  <p class="price">Rp 60.000</p>
+  <button onclick="addCart('Produk 4','Prod4',60000,'produk4.png')">
+    Tambahkan ke Keranjang
+  </button>
+</div>
+
+<div class="card" data-name="Benedetta - Phantom Mirage" data-price="100000">
+  <img src="produk5.jpg">
+  <h3>Benedetta "Phantom Mirage"</h3>
+  <p class="id">ID: Prod5</p>
+  <p class="desc">Skin Benedetta "Phantom Mirage" - Covenant 
+  via gift</p>
+  <p class="price">Rp 100.000</p>
+  <button onclick="addCart('Produk 5','Prod5',100000,'produk5.jpg')">
+    Tambahkan ke Keranjang
+  </button>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="kontak">
+<h2>Kontak</h2>
+<p>📧 Gmail: <b>kerill1700@gmail.com</b></p>
+<p>📱 WhatsApp: <b>088975118288</b></p>
+</section>
+
+<div class="cart-panel" id="cartPanel">
+<h3>Keranjang</h3>
+<div id="cartItems"></div>
+
+<button onclick="checkout()">Checkout</button>
+
+<a href="https://wa.me/6288975118288" target="_blank">
+<button class="wa">Tanya di WhatsApp</button>
+</a>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
